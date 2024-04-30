@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}"{{ if and .Site.Params.enableDarkMode .Site.Params.overrideSystemPreferences }}{{ with .Site.Params.defaultTheme | default "light" }} data-theme="{{ . }}"{{ end }}{{ end }}>
+<html lang="{{ .Site.LanguageCode }}"
+    {{ if and .Site.Params.enableDarkMode .Site.Params.overrideSystemPreferences }}
+        {{ with .Site.Params.defaultTheme | default "light" }} 
+            data-theme="{{ . }}"
+        {{ end }}
+    {{ end }}
+>
     {{ partial "head.html" . }}
     <body>
         <div class="container">
@@ -11,7 +17,11 @@
                 {{ partial "components/multilingual.html" . }}
                 {{ partial "components/dark-mode.html" . }}
             {{ end }}
-            {{ block "main" . }}{{ end }}
+            {{ block "main" . }}
+            {{ end }}
+            {{ if .Site.Params.search.fuseSearch }}
+                {{ partial "components/fuse-search.html"  (dict "Context" . "Class" "dark") }}
+            {{ end }}
             {{ partial "components/back-to-top.html" . }}
             {{ partial "footer.html" . }}
         </div>

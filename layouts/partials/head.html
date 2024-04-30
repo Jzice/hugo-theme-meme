@@ -79,6 +79,11 @@
         <link rel="{{ .Rel }}" type="{{ .MediaType }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}" />
     {{ end }}
 
+    <!-- custom css -->
+    {{ range .Site.Params.customCSS }}
+    <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
+    {{ end }}
+
     {{ if .Scratch.Get "share_page" -}}
         <meta name="robots" value="noindex,nofollow">
     {{ else -}}

@@ -64,6 +64,11 @@ function changeModeMeta(theme) {
 
 function changeMode() {
     const isDark = getCurrentTheme() === 'dark';
+    if (isDark) {
+        this.document.body.classList.add("dark");
+    } else {
+        this.document.body.classList.remove("dark");
+    }
 
     // Change theme color meta
     const themeColor = isDark ? '{{ .Site.Params.themeColorDark }}' : '{{ .Site.Params.themeColor }}';

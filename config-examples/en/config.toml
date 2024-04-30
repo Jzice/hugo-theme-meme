@@ -160,7 +160,7 @@ uglyURLs = false
 [outputs]
     page = ["HTML"]
     # home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex", "Algolia"]
-    home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex"]
+    home = ["HTML", "JSON", "SectionsAtom", "SectionsRSS", "SearchIndex"]
     section = ["HTML"]
     taxonomy = ["HTML"]
     term = ["HTML"]
@@ -247,6 +247,9 @@ uglyURLs = false
         weight = 8
         identifier = "search"
         post = "search"
+    [[menu.main]]
+        weight = 16
+        identifier = "fuse-search"
 
 
 
@@ -1453,7 +1456,7 @@ uglyURLs = false
     # Note: This requires SearchIndex
     #       output to be enabled.
 
-    enableLunrSearch = true
+    enableLunrSearch = false
     # Note: https://lunrjs.com/
 
 
@@ -1518,3 +1521,7 @@ uglyURLs = false
         valine = "/npm/valine@1.4.14/dist/Valine.min.js"
         busuanzi = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
         utterances = "https://utteranc.es/client.js"
+
+    # local search
+    [params.search.fuseSearch]
+        enable = true

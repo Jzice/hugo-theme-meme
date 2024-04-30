@@ -466,6 +466,9 @@ $fofPoster: url({{ $fofPoster }});
     $enableSearch: false;
 {{ end }}
 
+{{ if and (eq .Site.Params.headerLayout "flex") (or .Site.Params.search.fuseSearch) }}
+    @import "components/fuse-search";
+{{ end }}
 
 // Responsive
 

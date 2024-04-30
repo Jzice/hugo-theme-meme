@@ -31,6 +31,14 @@
 }
 
 .post {
+  padding: 3em 5em;
+  box-shadow: 0px 0px 6px alpha(var(--color-contrast-low), 0.5), 0px 0px 6px alpha(var(--color-contrast-low), 0.5);
+  -webkit-backdrop-filter: saturate(180%) blur(1em);
+  backdrop-filter: saturate(80%) blur(3em);
+}
+
+.post {
+
     p {
         margin: 1em 0;
         line-height: $lineHeight;

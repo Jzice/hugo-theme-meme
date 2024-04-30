@@ -6,6 +6,7 @@
     .header {
         position: fixed;
         width: 100vw;
+        box-shadow: 0px 0px 2px alpha(var(--color-contrast-low), 0.5);
     }
     .header-wrapper {
         padding: 1em 0;
